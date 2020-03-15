@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>layui.form小例子</title>
+<link rel="stylesheet" href="layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" action="classes/update"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+  <div class="layui-form-item" style="display: none;">
+    <div class="layui-input-block">
+      <input type="text" name="id" th:value="${classes.id}" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">课程名</label>
+    <div class="layui-input-block">
+      <input type="text" name="className" th:value="${classes.className}" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">教练</label>
+    <div class="layui-input-block">
+      <input type="text" name="teacher" th:value="${classes.teacher}" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">课时</label>
+    <div class="layui-input-block">
+      <input type="text" name="classTime" th:value="${classes.classTime}" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">课程数</label>
+    <div class="layui-input-block">
+      <input type="text" name="nums" th:value="${classes.nums}" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  <div class="layui-form-item">
+    <label class="layui-form-label">价格</label>
+    <div class="layui-input-block">
+      <input type="text" name="price" th:value="${classes.price}" placeholder="请输入" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+  
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit lay-filter="*">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>
+<script>
+layui.use('form', function(){
+	var form = layui.form;
+  	
+});
+</script>
+</body>
+</html>

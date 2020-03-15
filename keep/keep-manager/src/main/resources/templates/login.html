@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>开始使用layui</title>
+<link rel="stylesheet" href="../layui/css/layui.css">
+<style>
+.layui-main {
+	margin-top: 10%;
+	width: 450px;
+}
+
+.layui-footer {
+	position: fixed;
+	left: 50%;
+	right: 0;
+	bottom: 0;
+	height: 44px;
+	line-height: 44px;
+	padding: 0 15px;
+	background-color: #eee
+}
+
+#title {
+	margin: 50px auto;
+	text-align: center;
+}
+
+.layui-input-block {
+	margin-left: 0px
+}
+
+.layui-input {
+	padding-left: 40px;
+}
+
+.layui-btn {
+	padding: 0px 211px;
+}
+</style>
+</head>
+<body class="layui-bg-gray">
+	<div class="layui-container">
+		<div class="layui-main">
+			<div class="layui-row">
+				<!-- 标题 -->
+				<div id="title">
+					<h1>keep</h1>
+					<span>健身俱乐部</span>
+				</div>
+			</div>
+			<div class="layui-row">
+				<!-- 表单 -->
+				<form class="layui-form" action="user/doLogin">
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<input type="text" name="username" placeholder="用户名"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<input type="password" name="password" placeholder="密码"
+								autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn" lay-submit lay-filter="login">登录</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- footer -->
+			<div class="layui-row">
+				<div class="layui-footer">@ keep.com</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="../layui/layui.js"></script>
+	<script>
+		layui.use("form",function(){
+			var form=layui.form;
+			console.log(form);
+			form.on("login",function(data){
+				alert(data);
+			})
+		});
+	</script>
+</body>
+</html>
